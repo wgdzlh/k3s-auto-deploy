@@ -33,7 +33,7 @@ spec:
     port: 80
 
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mysite-nginx-ingress
@@ -41,9 +41,13 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - http:
+  - host: "test.lab.ben"
+    http:
       paths:
       - path: /
+        pathType: Prefix
         backend:
-          serviceName: mysite-nginx-service
-          servicePort: 80
+          service:
+            name: mysite-nginx-service
+            port:
+              number: 80
