@@ -6,7 +6,7 @@
   roles:
     - role: prereq
     - role: download
-    - role: raspberrypi
+    # - role: raspberrypi
   environment:
     http_proxy: http://172.16.0.1:1080
     https_proxy: http://172.16.0.1:1080
