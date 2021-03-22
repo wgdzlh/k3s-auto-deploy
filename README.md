@@ -1,11 +1,11 @@
-# Build a portable Kubernetes cluster using k3s via Ansible - on local VMs and Raspberry Pies
+# Build a portable Kubernetes cluster using k3s via Ansible - on local VMs and Raspberry Pi
 
 > Author: <https://github.com/wgdzlh>
 
 
 ## Goal
 
-This project is for enthusiasts who do not want try k8s on minikube or k3d, but a cluster as "real" as possible. The goal is to setup a bunch of local VMs on our main laptop, and connect in Raspberry Pies or other mini PCs available, to build up a portable environment for developing and testing.
+This project is for enthusiasts who do not want try k8s on minikube or k3d, but a cluster as "real" as possible. The goal is to setup a bunch of local VMs on our main laptop, and connect in Raspberry Pi or other mini PCs available, to build up a portable environment for developing and testing.
 
 
 ## Requirements on your local machine
@@ -47,7 +47,7 @@ This project is for enthusiasts who do not want try k8s on minikube or k3d, but 
     sh deploy_k3s.sh
     ```
 
-4. (This step is only for adding more gears to the cluster) After VMs cluster up and running, connect your Raspberry Pies to the laptop via ordinary ethernet cable (and using a network switch if you got more than one), get IP addresses from the vrouter management page, add them in you ansible inventory `hosts.ini` file (under `node2` section), and fire playbook:
+4. (This step is only for adding more gears to the cluster) After VMs cluster up and running, connect your Raspberry Pi to the laptop via ordinary ethernet cable (and using a network switch if you got more than one), get IP addresses from the vrouter management page, add them in you ansible inventory `hosts.ini` file (under `node2` section), and fire playbook:
 
     ```bash
     ansible-playbook add_node.yml
