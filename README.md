@@ -5,7 +5,7 @@
 
 ## Goal
 
-The project is for enthusiasts who do not want try k8s on minikube or k3d, but a cluster as "real" as possible. The goal is to setup a bunch of local VMs on our main laptop, and connect in Raspberry Pies or other mini PCs available, to build up a portable environment for developing and testing.
+This project is for enthusiasts who do not want try k8s on minikube or k3d, but a cluster as "real" as possible. The goal is to setup a bunch of local VMs on our main laptop, and connect in Raspberry Pies or other mini PCs available, to build up a portable environment for developing and testing.
 
 
 ## Requirements on your local machine
