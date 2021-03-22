@@ -54,7 +54,7 @@ Vagrant.configure("2") do |config|
         # end
       end
       node.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/tmp/me.pub"
-      node.vm.provision "shell", args: ["#{IP_BASE}", "#{host_no}"], inline: <<-SHELL
+      node.vm.provision "shell", args: [IP_BASE, "#{host_no}"], inline: <<-SHELL
 echo "setting host no.${2}"
 timedatectl set-timezone Asia/Shanghai
 apt-get purge snapd -y
