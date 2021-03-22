@@ -18,3 +18,6 @@
 # VM settings and files
 .vagrant
 *.vdi
+
+# local testing stuff
+testing

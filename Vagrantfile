@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 
 NODES_NUM = 3
+TIME_ZONE = "Asia/Shanghai"
 IP_BASE = "172.16.1"
 
 Vagrant.configure("2") do |config|
@@ -32,7 +33,7 @@ Vagrant.configure("2") do |config|
         v.cpus = cpus
         v.memory = memory
 
-        # Create a block device for Longhorn on the worker nodes
+        # Create a block device for Longhorn on the worker nodes if you desire.
         # if host_no != 10
         #   disk = "./" + hostname + "-block.vdi"
         #   unless File.exist?(disk)
@@ -54,9 +55,9 @@ Vagrant.configure("2") do |config|
         # end
       end
       node.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/tmp/me.pub"
-      node.vm.provision "shell", args: [IP_BASE, "#{host_no}"], inline: <<-SHELL
+      node.vm.provision "shell", args: [IP_BASE, "#{host_no}", TIME_ZONE], inline: <<-SHELL
 echo "setting host no.${2}"
-timedatectl set-timezone Asia/Shanghai
+timedatectl set-timezone ${3}
 apt-get purge snapd -y
 apt-get autoremove --purge -y
 echo 'inject ssh key.'

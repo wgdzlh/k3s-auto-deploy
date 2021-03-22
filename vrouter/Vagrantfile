@@ -6,8 +6,11 @@
 # $ vagrant provision
 # then login to IP_BASE.2 with user: root, password: vagrant, just like a real OpenWrt router.
 
+# Virtualbox host-only network name. Create one if not exist.
 HOST_NETWORK = "vboxnet1"
+# Subnet for our cluster
 IP_BASE = "172.16.1"
+# Interface name from `ifconfig`. We need to bridge a ehternet NIC to the virtual router if we want to connet in Raspberry Pies.
 BRGED_IF = "en6"
 
 Vagrant.configure("2") do |config|
