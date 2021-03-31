@@ -2,7 +2,3 @@
 k3s_version: v1.20.4+k3s1
 systemd_dir: /etc/systemd/system
 master_ip: "{{ hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0]) }}"
-extra_server_args: "--node-taint CriticalAddonsOnly=true:NoExecute --tls-san {{ master_ip }} \
-  --write-kubeconfig-mode 644"
-  # --flannel-iface enp0s8 --advertise-address --node-external-ip --disable traefik --disable servicelb
-extra_agent_args: ""
