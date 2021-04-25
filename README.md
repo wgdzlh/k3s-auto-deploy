@@ -10,7 +10,7 @@ This project is for enthusiasts who do not want try k8s on minikube or k3d, but 
 
 ## Requirements on your local machine
 
-- Macos(tested) / Linux(should working) / Windows WSL(if support tools listed down, no guarantee working)
+- Macos(tested) / Linux(tested) / Windows WSL(if support tools listed down, no guarantee working)
 - memory \>= 16GB, for VMs setup
 - Virtual Box
 - Vagrant
